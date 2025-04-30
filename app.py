@@ -23,11 +23,7 @@
 
 from fastapi import FastAPI
 from pymongo import MongoClient
-from dotenv import load_dotenv
 import os
-
-# Load .env (optional)
-load_dotenv()
 
 app = FastAPI()
 
