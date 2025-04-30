@@ -20,6 +20,11 @@ login_res = [
 ]
 
 
+@app.get("/users/", response_model=List[User])
+def get_users():
+    users = list(collection.find({}, {"_id": 0}))  # Exclude _id for clean response
+    return users
+
 @app.post("/users/")
 def create_user(user: User):
     result = collection.insert_one(user.dict())
